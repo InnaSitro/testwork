@@ -1,0 +1,226 @@
+@charset "utf-8";
+
+html{
+	&, body{
+		max-width: 100%;
+		width: 100vw;	
+		overflow-x: hidden;
+	}
+		
+	body{
+		.section-subtitle{
+			font: 1.27rem/1.2 $headings-font-family;
+			font-weight: normal;
+			color: $gray-500;
+			margin-bottom: 1.2rem;
+		}
+
+		// Buttons ------------------------------------------------------
+		.btn {
+			display: inline-block;
+			font-weight: $btn-font-weight;
+			font-family: $headings-font-family;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: middle;
+			user-select: none;
+			text-transform: uppercase;
+			color: $body-color;
+			border: $btn-border-width solid transparent;
+			letter-spacing: 0.1em;
+			@include button-size($btn-padding-y, $btn-padding-x, 0.77rem, $btn-line-height, $btn-border-radius);
+			@include transition($btn-transition);
+
+			// Share hover and focus styles
+			@include hover-focus {
+			  text-decoration: none;
+			}
+
+			&:hover,
+			&.hover {
+				outline: 0;
+				color: $orange-light;
+				box-shadow: $btn-box-shadow;
+			}
+
+			&:focus,
+			&.focus {
+				outline: 0;
+				color: $body-color;
+				box-shadow: $btn-focus-box-shadow;
+			}
+
+			// Disabled comes first so active can properly restyle
+			&.disabled,
+			&:disabled {
+			  opacity: $btn-disabled-opacity;
+			  @include box-shadow(none);
+			}
+
+			// Opinionated: add "hand" cursor to non-disabled .btn elements
+			&:not(:disabled):not(.disabled) {
+				cursor: pointer;
+			}
+
+			&:not(:disabled):not(.disabled):active,
+			&:not(:disabled):not(.disabled).active {
+				background-image: none;
+				@include box-shadow($btn-active-box-shadow);
+
+				&:focus {
+					@include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
+				}
+			}
+			// White -----------------------------------
+			&.btn-white{
+				background-color: $white;
+				position: relative;
+				box-shadow: $btn-box-shadow;
+				&:after{
+					content: "";
+					display: inline-block;
+					width: calc(100% - #{$btn-padding-x});
+					height: 4px;
+					background: $orange-light url('../img/btn-border-image.jpg');
+					position: absolute;
+					bottom: 0px;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+				&:focus,
+				&.focus{
+					background-color: #f5f2f2;
+					box-shadow: $btn-focus-box-shadow;
+				}
+				&.disabled,
+				&:disabled{
+					background-color: $gray;
+					color: $gray-500;
+					&:after{ display: none;}
+				}
+			}
+			// bordered -------------------------------------------
+			&.btn-bordered{
+				border: 4px solid $orange;
+				border-image: url(../img/btn-border-image.jpg) 1 round round;
+				text-transform: capitalize;
+				font-size: 1.3em;
+				color: $orange-light;
+				background-color: transparent;
+				&:hover,
+				&.hover {
+					outline: 0;
+					color: $orange-light;
+					box-shadow: none;
+					background-color: rgba(197,137,67,0.1);
+				}
+
+				&:focus,
+				&.focus {
+					outline: 0;
+					color: $orange-light;
+					box-shadow: none;
+					background-color: rgba(197,137,67,0.4);
+				}
+
+				&.disabled,
+				&:disabled{
+					color: $orange-light;
+					background-color: transparent;
+					opacity: 0.3;
+				}
+			}
+		}
+
+		// Future-proof disabling of clicks on `<a>` elements
+		a.btn.disabled,
+		fieldset:disabled a.btn {
+			pointer-events: none;
+		}
+
+		// svg-sprite --------------------------------------------------
+
+	}
+}
+
+/* Adaptive 
+=============================================================== */
+@include media-breakpoint-down(sm) {
+	html{
+		body{
+			font-size: 12px;
+			.section-subtitle{
+				font-size: 1em;
+				margin-bottom: 15px;
+			}
+			p{ margin-bottom: 0.5rem;}
+		}
+	}
+}
+@include media-breakpoint-only(xs) {}
+@include media-breakpoint-only(sm) {}
+
+@include media-breakpoint-up(md){
+	html{
+		body{
+			font-size: 15px;
+		}
+	}
+}
+@include media-breakpoint-only(md) {
+	html{
+		body{
+			p{ margin-bottom: 0.5rem;}
+			.section-subtitle{ font-size: 1rem;}
+		}
+	}
+}
+@include media-breakpoint-only(lg) {
+	html{
+		body{
+			.section-subtitle{ font-size: 1.1rem;}
+		}
+	}
+}
+@include media-breakpoint-only(xl) {
+	html{
+		body{
+			font-size: 18px;
+		}
+		
+	}
+}
+@media (min-width: 1200px) and (max-width: 1650px) {
+	html{
+		body{
+			font-size: 17px;
+		}
+		
+	}
+}
+
+// Grid ------------------------------------------
+@include media-breakpoint-down(lg) {
+	html body{
+		.container, [class*=col-]{
+			padding-right: 15px;
+    		padding-left: 15px;
+		}
+		.row{
+			margin-right: -15px;
+    		margin-left: -15px;
+		}
+	}
+}
+@include media-breakpoint-down(sm) {
+	html body{
+		.container, [class*=col-]{
+			padding-right: 10px;
+    		padding-left: 10px;
+		}
+		.row{
+			margin-right: -10px;
+    		margin-left: -10px;
+		}
+	}
+}

@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: 'Circe';
+	src:  url('../fonts/Circe-ExtraBold/Circe-ExtraBold.eot');
+	src:  url('../fonts/Circe-ExtraBold/Circe-ExtraBold.woff') format('woff'), 
+          url('../fonts/Circe-ExtraBold/Circe-ExtraBold.ttf') format('truetype'), 
+          url('../fonts/Circe-ExtraBold/Circe-ExtraBold.svg') format('svg');
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src:  url('../fonts/Circe-Bold/Circe-Bold.eot');
+	src:  url('../fonts/Circe-Bold/Circe-Bold.woff') format('woff'), 
+          url('../fonts/Circe-Bold/Circe-Bold.ttf') format('truetype'), 
+          url('../fonts/Circe-Bold/Circe-Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src:  url('../fonts/Circe-Regular/Circe-Regular.eot');
+	src:  url('../fonts/Circe-Regular/Circe-Regular.woff') format('woff'), 
+          url('../fonts/Circe-Regular/Circe-Regular.ttf') format('truetype'), 
+          url('../fonts/Circe-Regular/Circe-Regular.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src:  url('../fonts/Circe-Light/Circe-Light.eot');
+	src:  url('../fonts/Circe-Light/Circe-Light.woff') format('woff'), 
+          url('../fonts/Circe-Light/Circe-Light.ttf') format('truetype'), 
+          url('../fonts/Circe-Light/Circe-Light.svg') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circe';
+	src:  url('../fonts/Circe-Thin/Circe-Thin.eot');
+	src:  url('../fonts/Circe-Thin/Circe-Thin.woff') format('woff'), 
+          url('../fonts/Circe-Thin/Circe-Thin.ttf') format('truetype'), 
+          url('../fonts/Circe-Thin/Circe-Thin.svg') format('svg');
+	font-weight: 200;
+	font-style: normal;
+}
+
+//font-family: 'Cabin', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Cabin');

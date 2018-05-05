@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+html{
+	body{
+		.part02{
+			background-color: $gray;
+			padding: 200px 0 100px 0;
+			.part02__title{
+    			letter-spacing: 0.03em;
+				font: 3.22em/0.75 $headings-font-family;
+				font-weight: 700;
+			}
+			.part02__wrapper{
+				border:  $gray-500 solid 1px;
+				padding: ($grid-gutter-width / 2 + $grid-gutter-width) ($grid-gutter-width *  2);
+			}
+		}
+	}
+}
+
+/* Adaptive 
+=============================================================== */
+@include media-breakpoint-down(sm) {
+	html{
+		body{
+			.part02{
+				padding: 60px 10px;
+				.part02__title{
+					font-size: 2em;
+					margin-bottom: 15px;
+				}
+				.part02__wrapper{
+					border: 0;
+					padding: 0 15px;
+					flex-direction: column;
+					align-items: center!important;
+					.part02__wrapper__btn{
+						.btn-white{ 
+							display: block;
+							font-size: 0.9em;
+							padding: 1rem 1.5rem;
+							&:after{ width: calc(100% - 3rem);}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-only(xs) {}
+@include media-breakpoint-only(sm) {}
+
+@include media-breakpoint-up(md){
+	html{
+		body{
+			.part02{
+				font-size: 0.9rem;
+				padding-top: 150px;
+				.part02__title{
+					line-height: 0.85;
+				}
+				.part02__wrapper{
+					padding: ($grid-gutter-width / 2 + $grid-gutter-width) $grid-gutter-width;
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-only(md) {
+	html{
+		body{
+			.part02{
+				.part02__title{ 
+					font-size: 2.5em;
+					margin-bottom: 30px;
+				}
+				.part02__wrapper{
+					flex-direction: column;
+					align-items: center!important;
+					.part02__wrapper__btn{
+						width: 100%;
+						.btn-white{ 
+							display: block;
+							&:after{ width: calc(100% - 6rem);}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-only(lg) {
+	html{
+		body{
+			.part02{
+				.part02__title{ 
+					font-size: 2.5em;
+					line-height: 1;
+				}
+				.part02__wrapper{
+					.part02__wrapper__btn{
+						.btn-white{
+							padding: 1rem 1.3rem;
+						    font-size: .67rem;
+						}
+					}
+				}
+			}
+		}
+	}
+	    
+}
+
+@include media-breakpoint-only(xl) {}
+
+@media (min-width: 1200px) and (max-width: 1650px){
+	html{
+		body{
+			.part02{
+				font-size: 0.9rem;
+				.part02__wrapper{
+					padding: ($grid-gutter-width / 2 + $grid-gutter-width) $grid-gutter-width;
+				}
+					
+			}
+		}
+	}
+}
+

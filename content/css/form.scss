@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+html{
+	body{
+		.form{
+			.form__item{
+				margin: 0 10px 20px 10px;
+				position: relative;
+				&:last-child{ margin-bottom: 0;}
+			}
+			.form__button{
+				margin-top: 50px;
+			}
+			input:not([type="submit"]), textarea{
+				background: rgba(186,135,82,0.1);
+				border: 1px solid $orange;
+				//border-image: url(../img/btn-border-image.jpg) 1 round round;
+				color: $orange-light;
+				font: 0.9em/1.2 $headings-font-family;
+				font-weight: 300;
+				padding: .75rem 1.2rem;
+				width: 100%;
+				&::placeholder{ color: $input-placeholder-color;}
+				&:hover{
+					background: rgba(186,135,82,0.2);
+				}
+				&:focus, &:active{
+					outline: 0;
+					background: rgba(186,135,82,0.2);
+					color: rgba(255,251,245,0.7);
+				}
+				&.error{
+					background: rgba(255,90,90,0.1);
+					border-color: rgb(255,90,90);
+					&::placeholder, &:hover, &:focus, &:active{
+						color: rgb(255,90,90);
+					}
+				}
+			}
+			label{
+				position: absolute;
+				bottom: 100%;
+				left: 0;
+				padding: 0.5rem 1rem;
+				margin-bottom: 5%;				
+				&:after{
+					content: "";
+					display: block;
+					border: 6px solid transparent;
+					border-top-color: #ff4343;
+					position: absolute;
+					left: 1rem;
+					top: 100%;
+				}
+				&.error{
+					background: #ff4343;
+					color: $white;
+					font-size: 13px;
+				}
+			}
+		}
+	}
+}
+
+/* Adaptive 
+=============================================================== */
+@include media-breakpoint-down(sm) {
+	html{
+		body{
+			.form{
+				.form__item{
+					margin: 0 10px 20px 10px;
+					&:last-child{ margin-bottom: 20px;}
+				}
+				.no-gutters{
+					margin-right: 0px;
+    				margin-left: 0px;
+					[class*=col-]{
+						padding-right: 10px;
+			    		padding-left: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-only(xs) {}
+@include media-breakpoint-only(sm) {}
+@include media-breakpoint-only(md) {}
+@include media-breakpoint-only(lg) {}
+@include media-breakpoint-only(xl) {}

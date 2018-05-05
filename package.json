@@ -1,0 +1,22 @@
+{
+  "name": "test-work",
+  "version": "0.1.0",
+  "description": "by Inna Sitro",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-contrib-jshint": "latest",
+    "jshint-stylish": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-watch": "latest"
+  },
+  "dependencies": {
+    "autoprefixer": "^8.3.0",
+    "bootstrap": "^4.1.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^2.1.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3"
+  }
+}
